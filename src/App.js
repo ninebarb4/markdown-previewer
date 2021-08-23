@@ -1,11 +1,10 @@
 import './App.css';
+import Editor from './Editor';
 
 function App() {
   return (
     <div className="page-wrapper">
-      <div className="editor-wrapper">
-        <h1>hello everyone</h1>
-      </div>
+      <Editor/>
     </div>
   );
 }
