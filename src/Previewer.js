@@ -1,11 +1,12 @@
 import React from 'react';
 import './TextAreas.css';
 
-export default function Previewer() {
+export default function Previewer(props) {
     return (
         <div className="text-container">
-            <textarea className="text-areas" id="editor">
-
+            {/* need to use value attribute in text area to update rather than just inserting props.text netween textarea element tags*/}
+            <textarea className="text-areas" id="editor" value={props.text}>
+            
             </textarea>
         </div>
     )
