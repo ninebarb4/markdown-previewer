@@ -4,7 +4,7 @@
     border: none;
     max-width: 75%;
     min-width: 40%;
-    min-height: 25vh;
+    /* min-height: 25vh; */
 }
 
 /* aligns text area in center and resizes both horizontally and vertically */
@@ -12,4 +12,9 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
+}
+
+/* webkit-scrollbar only works in certain browsers */
+.text-areas::-webkit-scrollbar {
+    width: 0;
 }
