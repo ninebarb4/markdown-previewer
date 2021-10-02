@@ -2,6 +2,9 @@ import React from 'react';
 import './TextAreas.css';
 import { useState, useEffect, useRef } from 'react';
 
+//assign marked library to variable
+const marked = require("marked");
+
 export default function Editor(props) {
     //give a default height to editor text area
     const defaultHeight = "40px";
@@ -36,6 +39,7 @@ export default function Editor(props) {
             >
 
             </textarea>
+            
         </div>
     )
 }
