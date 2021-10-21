@@ -14,6 +14,7 @@ export default function Editor(props) {
     function handleChange(element){
         //set "text" held in parent state
         props.setText(element.target.value);
+        
     }
 
     //when text updated on change use effect will alter scrollHeight of element
@@ -34,7 +35,7 @@ export default function Editor(props) {
             className="text-areas" 
             id="editor" 
             value={props.text}
-            style={{paddingTop: "0px", paddingBottom: "0px"}} 
+            style={{paddingTop: "0px", paddingBottom: "0px", paddingLeft: "1em"}} 
             onChange={handleChange}
             >
 

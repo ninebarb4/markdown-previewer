@@ -1,35 +1,28 @@
 import React from 'react';
 import './TextAreas.css';
-import { useState, useEffect, useRef } from 'react';
-
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
 
 const marked = require("marked");
 
+marked.setOptions({
+    breaks: true,
+    highlight: function (code) {
+        return Prism.highlight(code, Prism.languages.javascript, 'javascript')
+    }
+});
+
 export default function Previewer(props) {
-    const defaultHeight = "40px";
-    const outputTextArea = useRef();
-
-    useEffect(() => {
-        //first set height back to default height incase user deletes content
-        //if they did this scroll height would remain the same but would have large empty text area
-        outputTextArea.current.style.height = defaultHeight;
-         const scrollHeight = outputTextArea.current.scrollHeight;
-         outputTextArea.current.style.height = scrollHeight + "px";
-     }, [props.text])
-
-
     return (
         <div className="text-container">
-            <textarea 
-            ref={outputTextArea}
-            className="text-areas" 
-            id="previewer" 
-            value={marked(props.text)}
-            style={{paddingTop: "0px", paddingBottom: "0px"}} 
+            <div
+            //ref={outputTextArea}
+            className="preview-area" 
+            dangerouslySetInnerHTML={{__html: marked(props.text)}}
+            id="preview" 
+            style={{paddingTop: "0px", paddingBottom: "0px", paddingLeft: "1em"}} 
             >
-
-            </textarea>
-            
+            </div>
         </div>
     )
 }
