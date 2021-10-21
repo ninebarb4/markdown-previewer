@@ -20,7 +20,7 @@ function greet(str) {
 }
 \`\`\`
 
-wow look some **bold text!** and again... **boom**
+wow look! Some **bold text!** ... and again... **boom**
 
 Here is a list:
 1. First item
