@@ -38,7 +38,6 @@ export default function Editor(props) {
             style={{paddingTop: "0px", paddingBottom: "0px", paddingLeft: "1em"}} 
             onChange={handleChange}
             >
-
             </textarea>
             
         </div>
